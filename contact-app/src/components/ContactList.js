@@ -1,11 +1,18 @@
 import React from 'react'
+import ContactCard from './ContactCard';
 
-class AddContact extends React.Component{
-    render(){
+const ContactList=(props)=> {
+    const renderContactList=props.contacts.map((contact)=>{
         return(
-            <div className='ui main'></div>
+            <ContactCard contact={contact} />
         );
-    }
+    })
+  return (
+    <div className='ui celled list'>
+        <h3>Contact list</h3>
+        {renderContactList} 
+    </div>
+  )
 }
 
 export default ContactList
